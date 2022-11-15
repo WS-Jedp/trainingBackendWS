@@ -67,9 +67,15 @@ Route::get("session_registrations", function () {
 });
 
 Route::get("eventsRatings", function () {
-    $eventsRatings= eventsRatings::find(1)->attendees;
+    $eventsRatings = eventsRatings::all();
     return response()->json($eventsRatings) ;
 });
+
+Route::get("sessionsRatings", function () {
+    $sessionsRatings = sessionsRatings::all();
+    return response()->json($sessionsRatings) ;
+});
+
 
 Route::get('/', function () {
     return view('welcome');

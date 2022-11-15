@@ -9,7 +9,10 @@ class attendees extends Model
 {
     use HasFactory;
     protected $table = "attendees";
-    public function comments(){
+    public function commentsE(){
         return $this->hasMany(eventsRatings::class,'attendees_id', 'id');
+    }
+    public function commentsS(){
+        return $this->hasMany(sessionsRatings::class,'attendees_id', 'id');
     }
 }
