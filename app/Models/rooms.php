@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class rooms extends Model
 {
     use HasFactory;
-    protected $rooms = "romms";
+    protected $table = "romms";
 }

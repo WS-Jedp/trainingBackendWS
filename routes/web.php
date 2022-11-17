@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ticketControl;
 use App\Models\attendees;
 use App\Models\channels;
 use App\Models\event_tickets;
@@ -71,11 +72,14 @@ Route::get("eventsRatings", function () {
     return response()->json($eventsRatings) ;
 });
 
-Route::get("sessionsRatings", function () {
+/* Route::get("sessionsRatings", function () {
     $sessionsRatings = sessionsRatings::all();
     return response()->json($sessionsRatings) ;
-});
+}); */
 
+Route::post('/tickets', [ticketControl::class,'save']);
+
+Route::get('/tickets', [ticketControl::class, 'allTicket']);
 
 Route::get('/', function () {
     return view('welcome');

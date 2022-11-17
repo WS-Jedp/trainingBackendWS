@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class session_registrations extends Model
 {
     use HasFactory;
-    protected $session_registrations = "session_registrations";
+    protected $table = "session_registrations";
 }
